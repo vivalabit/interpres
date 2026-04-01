@@ -5,8 +5,8 @@
 .translator-shell {
   position: relative;
   z-index: 2147483647;
-  font-family: "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #152033;
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #30302d;
 }
 
 .translator-card {
@@ -15,15 +15,18 @@
   max-height: min(420px, calc(100vh - 24px));
   overflow: auto;
   box-sizing: border-box;
-  padding: 16px 16px 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(30, 41, 59, 0.08);
+  padding: 14px;
+  border-radius: 28px;
+  border: 1px solid rgba(88, 80, 61, 0.08);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 249, 252, 0.98));
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.88), transparent 30%),
+    radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.5), transparent 20%),
+    linear-gradient(180deg, rgba(245, 243, 235, 0.98), rgba(240, 236, 226, 0.98));
   box-shadow:
-    0 18px 40px rgba(15, 23, 42, 0.18),
-    0 8px 20px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(16px);
+    0 22px 48px rgba(86, 76, 52, 0.16),
+    0 8px 18px rgba(86, 76, 52, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
 }
 
 .translator-card::after {
@@ -32,8 +35,8 @@
   width: 12px;
   height: 12px;
   background: inherit;
-  border-left: 1px solid rgba(30, 41, 59, 0.08);
-  border-top: 1px solid rgba(30, 41, 59, 0.08);
+  border-left: 1px solid rgba(88, 80, 61, 0.08);
+  border-top: 1px solid rgba(88, 80, 61, 0.08);
   transform: rotate(45deg);
 }
 
@@ -61,35 +64,38 @@
 
 .translator-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 14px;
+  right: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   border: 0;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.06);
-  color: #334155;
+  background: #2d2d2b;
+  color: #f6f3eb;
   cursor: pointer;
   font-size: 18px;
   line-height: 1;
+  box-shadow: 0 10px 22px rgba(32, 31, 28, 0.16);
 }
 
 .translator-close:hover {
-  background: rgba(15, 23, 42, 0.12);
+  background: #1f1f1d;
 }
 
 .translator-status {
   display: none;
-  padding: 10px 12px;
-  margin-right: 34px;
-  border-radius: 12px;
-  background: rgba(14, 116, 144, 0.08);
-  color: #0f172a;
-  font-size: 13px;
+  padding: 12px 14px;
+  margin-right: 42px;
+  border-radius: 18px;
+  background: rgba(225, 229, 241, 0.95);
+  color: #2f2d28;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 1.5;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .translator-status[data-visible="true"] {
@@ -97,55 +103,100 @@
 }
 
 .translator-status[data-variant="error"] {
-  background: rgba(190, 24, 93, 0.08);
-  color: #831843;
+  background: rgba(247, 226, 230, 0.94);
+  color: #9c3657;
 }
 
 .translator-status[data-variant="loading"] {
-  background: rgba(37, 99, 235, 0.08);
-  color: #1d4ed8;
+  background: rgba(225, 229, 241, 0.95);
+  color: #2f2d28;
 }
 
 .translator-section {
   margin-top: 14px;
+  padding: 14px;
+  border-radius: 22px;
+  border: 1px solid rgba(101, 92, 68, 0.07);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(248, 245, 238, 0.5));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 8px 16px rgba(102, 92, 67, 0.07);
+}
+
+.translator-section[data-section="translation"] {
+  padding-top: 16px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.66), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(248, 245, 238, 0.52));
+}
+
+.translator-section[data-section="explanation"] {
+  background:
+    linear-gradient(180deg, rgba(239, 235, 225, 0.82), rgba(248, 245, 238, 0.5));
 }
 
 .translator-title {
-  margin: 0 34px 8px 0;
-  font-size: 13px;
+  margin: 0;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #475569;
+  color: #918977;
 }
 
 .translator-text,
 .translator-meta {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .translator-text {
   white-space: pre-wrap;
+  margin-top: 10px;
+  color: #423d34;
 }
 
 .translator-meta {
-  margin-top: 6px;
-  font-size: 12px;
-  color: #64748b;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #2f2f2d;
+  color: #f5f1e9;
+  font-size: 10px;
+  letter-spacing: 0.03em;
 }
 
 .translator-list {
-  margin: 0;
+  margin: 10px 0 0;
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .translator-example {
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: rgba(148, 163, 184, 0.08);
+  position: relative;
+  padding: 12px 13px 11px 15px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(250, 248, 242, 0.9), rgba(244, 239, 229, 0.88));
+  border: 1px solid rgba(104, 95, 71, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.translator-example::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #ff8928;
+  box-shadow: 0 0 0 6px rgba(255, 137, 40, 0.12);
 }
 
 .translator-example-original,
@@ -155,20 +206,45 @@
 }
 
 .translator-example-original {
-  font-size: 14px;
-  color: #152033;
+  max-width: calc(100% - 24px);
+  font-size: 12px;
+  font-weight: 600;
+  color: #302c25;
 }
 
 .translator-example-translation {
   margin-top: 4px;
-  font-size: 12px;
-  color: #64748b;
+  font-size: 10px;
+  color: #9a9385;
+}
+
+.translator-section[data-section="translation"] .translator-text {
+  font-size: 20px;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  color: #31302b;
+}
+
+.translator-section[data-section="translation"] .translator-title,
+.translator-section[data-section="interesting"] .translator-title,
+.translator-section[data-section="explanation"] .translator-title {
+  display: block;
 }
 
 @media (max-width: 480px) {
   .translator-card {
     width: min(320px, calc(100vw - 16px));
-    padding: 14px 14px 12px;
-    border-radius: 14px;
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .translator-section {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .translator-section[data-section="translation"] .translator-text {
+    font-size: 18px;
   }
 }
