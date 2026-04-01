@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection Translator Settings</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f3f6fb;
+        --panel: rgba(255, 255, 255, 0.92);
+        --text: #172033;
+        --muted: #5b6b82;
+        --accent: #0f766e;
+        --border: rgba(23, 32, 51, 0.1);
+        --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 34%),
+          radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 28%),
+          var(--bg);
+      }
+
+      .page {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .panel {
+        background: var(--panel);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 28px;
+      }
+
+      p {
+        margin: 0 0 24px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      label {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        min-height: 46px;
+        padding: 0 14px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: #ffffff;
+        font-size: 15px;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 22px 0 26px;
+        font-size: 15px;
+      }
+
+      button {
+        min-height: 44px;
+        padding: 0 18px;
+        border: 0;
+        border-radius: 12px;
+        background: var(--accent);
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #115e59;
+      }
+
+      .status {
+        min-height: 24px;
+        margin-top: 14px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="panel">
+        <h1>Translation Settings</h1>
+        <p>
+          Choose the translation language and the explanation language used by the extension.
+        </p>
+
+        <form id="settings-form">
+          <div class="field">
+            <label for="targetLanguage">Target language</label>
+            <input id="targetLanguage" name="targetLanguage" type="text" placeholder="English" />
+          </div>
+
+          <div class="field">
+            <label for="explanationLanguage">Explanation language</label>
+            <input
+              id="explanationLanguage"
+              name="explanationLanguage"
+              type="text"
+              placeholder="English"
+            />
+          </div>
+
+          <label class="checkbox">
+            <input id="autoSpeakExplanation" name="autoSpeakExplanation" type="checkbox" />
+            <span>Automatically speak the explanation</span>
+          </label>
+
+          <button type="submit">Save settings</button>
+          <div class="status" id="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
