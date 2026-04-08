@@ -30,6 +30,8 @@ It helps when you want to:
 - see how a word sounds in real usage
 - remember meaning faster because you saw it in context, not isolation
 
+<img src="https://i.imgur.com/AKHyfin.png" width="500"/>
+
 ## How it works
 
 1. You select text on a webpage.
@@ -38,6 +40,8 @@ It helps when you want to:
 4. The extension sends the text to your local backend.
 5. The backend calls OpenAI through the Responses API.
 6. The result comes back as a compact popup next to the selected text.
+
+<img src="https://i.imgur.com/KcGSwhh.jpeg" width="500"/>
 
 Important: the OpenAI API key is **not** stored in the extension. It stays only in the backend on your machine.
 
